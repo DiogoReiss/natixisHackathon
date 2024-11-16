@@ -1,13 +1,17 @@
 import React from 'React';
+
+import './carousel.css';
+
 import {useEffect, useState} from "react";
 import {CAROUSEL_INTERVAL, ITEMS_PER_SLIDE} from "../../models/const.models";
 import {CarouselItem} from "../../models/interfaces.models";
 
+import { RxDividerVertical } from "react-icons/rx";
 import Item from "../carouselItem/carouselItem";
 
 const Carousel = ({ items }: { items: Array<CarouselItem>}) => {
 
-    const duplicatedItems = [...items, ...items]
+    const duplicatedItems = [...items, ...items, ...items, ...items]
 
     const [current, setCurrentIndex] = useState(0);
 
@@ -24,24 +28,27 @@ const Carousel = ({ items }: { items: Array<CarouselItem>}) => {
         }, CAROUSEL_INTERVAL);
 
         return () => clearInterval(timer);
-    }, [items.length]);
+    }, [items]);
 
     return (
-        <section className="carousel-container">
+        <div className="carousel-container">
             <div
                 className="carousel-track"
                 style={{ animationDuration: `${CAROUSEL_INTERVAL}s`}}
             >
                 {
                     duplicatedItems.map(((item, index) => (
-                        <Item
-                        item={item}
-                        index={index}
-                        />
+                        <>
+                            <Item
+                                item={item}
+                                index={index}
+                            />
+                            <RxDividerVertical />
+                        </>
                     )))
                 }
             </div>
-        </section>
+        </div>
     )
 }
 

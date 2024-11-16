@@ -1,17 +1,25 @@
 .carousel-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    height: 50px; /* Adjust height as needed */
-    background-color: #f9f9f9;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: var(--spaceMedium);
+    padding: var(--spaceMedium);
+    overflow: hidden;
+    width: 80%;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
+
+    justify-self: center;
+
+    -webkit-box-shadow: 0 2px 4px 0 rgba(104,31,122,0.25);
+    -moz-box-shadow: 0 2px 4px 0 rgba(104,31,122,0.25);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .carousel-track {
     display: flex;
     animation: scroll-horizontal linear infinite;
+    align-items: center;
 }
 
 @keyframes scroll-horizontal {

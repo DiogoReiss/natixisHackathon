@@ -1,8 +1,19 @@
 .carousel-item {
-    flex: 0 0 auto; /* Prevent items from shrinking */
-    min-width: max-content; /* Ensure each item takes its content width */
-    margin-right: 20px; /* Space between items */
-    font-size: 1rem; /* Text size */
-    color: #333; /* Text color */
-    white-space: nowrap; /* Prevent text wrapping */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: max-content;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: var(--fontP);
+}
+
+.item-profit {
+    color: #248F0C;
+    margin-left: 25px;
+}
+
+.item-loss {
+    color: #560000;
+    margin-left: 25px;
 }

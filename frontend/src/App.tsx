@@ -4,7 +4,7 @@ import "./styles/global.css";
 import "./styles/grid.css";
 import "./styles/style.css";
 
-import Home from "./components/HomePage/home";
+// import Home from "./components/HomePage/home";
 import Profile from "./components/Profile/profile";
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Footer from "./components/Footer/footer";
