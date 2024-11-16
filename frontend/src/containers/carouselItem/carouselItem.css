@@ -1,0 +1,19 @@
+.carousel-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: max-content;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: var(--fontP);
+}
+
+.item-profit {
+    color: #248F0C;
+    margin-left: 25px;
+}
+
+.item-loss {
+    color: #560000;
+    margin-left: 25px;
+}

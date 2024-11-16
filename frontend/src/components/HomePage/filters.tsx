@@ -1,7 +1,6 @@
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import PropTypes from 'prop-types';
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 
 interface Props {
     title: string;
@@ -48,12 +47,14 @@ const FilterBox = (props: Props) => {
                 return [filterOption.value];
             }
             else{
+                /*
                 if(prev.includes(filterOption.value)){
                     return prev.filter((item) => item !== filterOption.value);
                 }
-                else{
+                */
+                // else{
                     return [...prev, filterOption.value];
-                }
+                // }
             }
         });
     }
