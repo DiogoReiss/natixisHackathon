@@ -7,7 +7,11 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "target": "es5",
+    "lib": ["dom", "es2016", "scripthost"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "src"],
+  "exclude": []
 }

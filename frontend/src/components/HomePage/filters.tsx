@@ -1,40 +1,46 @@
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import PropTypes from 'prop-types';
 import { useState } from "react";
+import React from "react";
 
-const FilterBox = ({ props }) => {
+interface Props {
+    title: string;
+    optionsId: string;
+    options: {name: string}[];
+}
 
-    const [selectedFilters, setSelectedFilters] = useState();
+const FilterBox = (props: Props) => {
+
+    const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
     const toggleFilter = () => {
         const filterBox = document.getElementById('filterCategory');
     
-        //get the iconDown and iconUp from this filtercatgory
-        const iconDown = filterBox.querySelector('.iconDown');
-        const iconUp = filterBox.querySelector('.iconUp');
+        // Get the iconDown and iconUp elements within this filterCategory
+        const iconDown = filterBox?.querySelector('.iconDown');
+        const iconUp = filterBox?.querySelector('.iconUp');
 
-        //get the filterOptions from this filtercatgory
+        // Get the filterOptions using the provided props.optionsId
         const filterOptions = document.getElementById(props.optionsId);
-    
-        if(filterBox.classList.contains('active')){
+
+        if (filterBox?.classList.contains('active')) {
             filterBox.classList.remove('active');
-            iconDown["style"].display = 'block';
-            iconUp["style"].display = 'none';
+            if (iconDown) (iconDown as HTMLElement).style.display = 'block';
+            if (iconUp) (iconUp as HTMLElement).style.display = 'none';
 
-            filterOptions.style.display = 'none';
-        }
-        else{
-            filterBox.classList.add('active');
-            iconDown["style"].display = 'none';
-            iconUp["style"].display = 'block';
+            if (filterOptions) filterOptions.style.display = 'none';
+        } else {
+            filterBox?.classList.add('active');
+            if (iconDown) (iconDown as HTMLElement).style.display = 'none';
+            if (iconUp) (iconUp as HTMLElement).style.display = 'block';
 
-            filterOptions.style.display = 'flex';
+            if (filterOptions) filterOptions.style.display = 'flex';
         }
 
         console.log(selectedFilters);
     }
 
-    const toggleFilterOption = (e) => {
+    const toggleFilterOption = (e: { target: any; }) => {
         const filterOption = e.target;
     
         setSelectedFilters((prev) => {
