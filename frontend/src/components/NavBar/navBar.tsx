@@ -1,10 +1,10 @@
-import React from 'react';
+/* import React from 'react';
 import './Navbar.css';
 
-const Navbar = ({ isMenuOpen }) => {
+const Navbar = () => {
     return (
         <div className="navbar">
-            <div className={`search-bar ${isMenuOpen ? 'slide-right' : ''}`}>
+            <div className={`search-bar`}>
                 <input
                     type="text"
                     placeholder="Search..."
@@ -16,3 +16,4 @@ const Navbar = ({ isMenuOpen }) => {
 };
 
 export default Navbar;
+ */

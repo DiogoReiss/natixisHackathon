@@ -143,34 +143,36 @@ const Home = () => {
 
   return (
     <>
-      <div className='container'>
-        <div className="col12 colL8 colM6 colS3">
-            <div className="portResumeRow">
-                <h4>Portfolio</h4>
-                <div className="containerNoSpace">
-                    <div className="col2 w-100">
-                        <h6>Name</h6>
+    <div className="homeContent">
+        <div className='container'>
+            <div className="col12 colL8 colM6 colS3">
+                <div className="portResumeRow">
+                    <h4>Portfolio</h4>
+                    <div className="containerNoSpace">
+                        <div className="col2 w-100">
+                            <h6>Name</h6>
+                        </div>
+                        <div className="col2 w-100">
+                            <h6>Buy Price</h6>
+                        </div>
+                        <div className="col2 w-100">
+                            <h6>Quantity</h6>
+                        </div>
+                        <div className="col2 w-100">
+                            <h6>Price Diff</h6>
+                        </div>
+                        <div className="col4 w-100">
+                            <h6>Rating</h6>
+                        </div>
                     </div>
-                    <div className="col2 w-100">
-                        <h6>Buy Price</h6>
-                    </div>
-                    <div className="col2 w-100">
-                        <h6>Quantity</h6>
-                    </div>
-                    <div className="col2 w-100">
-                        <h6>Price Diff</h6>
-                    </div>
-                    <div className="col4 w-100">
-                        <h6>Rating</h6>
-                    </div>
-                </div>
-          </div>
+            </div>
 
-          {rows.map((element, index) => (
-            <ProfRows key={index} id={element.id} name={element.name} percentage={element.percentage} buyPrice={element.buyPrice} quantity={element.quantity} priceDiff={element.priceDiff} rating={element.rating}
-                exchange={element.exchange} ticker={element.ticker} country={element.country} sector={element.sector} industry={element.industry} currency={element.currency} marketCap={element.marketCap}
-                dividendYield={element.dividendYield} />
-          ))}
+            {rows.map((element, index) => (
+                <ProfRows key={index} id={element.id} name={element.name} percentage={element.percentage} buyPrice={element.buyPrice} quantity={element.quantity} priceDiff={element.priceDiff} rating={element.rating}
+                    exchange={element.exchange} ticker={element.ticker} country={element.country} sector={element.sector} industry={element.industry} currency={element.currency} marketCap={element.marketCap}
+                    dividendYield={element.dividendYield} />
+            ))}
+            </div>
         </div>
       </div>
     </>

@@ -1,3 +1,5 @@
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
+
 interface Props {
     name: string;
     percentage: string;
@@ -14,15 +16,21 @@ interface Props {
     currency: string;
     marketCap: string;
     dividendYield: string;
-
 }
 
 const ProfRows = (props: Props) => {
 
     function toggleDetailedRow(){
         const detailedRow = document.getElementById(props.id);
+        const iconDown = document.getElementById('arrowPortDown');
+        const iconUp = document.getElementById('arrowPortUp');
+
         if (detailedRow?.style.display === "none") {
             detailedRow.style.display = "block";
+
+            //show iconUp and hide iconDown
+            if (iconDown) (iconDown as HTMLElement).style.display = 'none';
+            if (iconUp) (iconUp as HTMLElement).style.display = 'block';
 
             //close all te other detailed rows
             const detailedRows = document.getElementsByClassName("portDetailedRow");
@@ -33,6 +41,10 @@ const ProfRows = (props: Props) => {
             }
         } else {
             detailedRow!.style.display = "none";
+
+            //show iconUp and hide iconDown
+            if (iconDown) (iconDown as HTMLElement).style.display = 'block';
+            if (iconUp) (iconUp as HTMLElement).style.display = 'none';
         }
     }
 
@@ -40,7 +52,7 @@ const ProfRows = (props: Props) => {
   return (
     <>
         <div className="portResumeRow">
-          <div className="containerNoSpace">
+          <div className="containerNoSpace icon" onClick={toggleDetailedRow}>
             <div className="col2 w-100 h-100 portRowsAlignCenter">
                 <p>{props.name}</p>
                 <p className="light">{props.percentage}%</p>
@@ -57,8 +69,9 @@ const ProfRows = (props: Props) => {
             <div className="col3 w-100 h-100 portRowsAlignCenter">
                 <p>{props.rating}</p>
             </div>
-            <div className="col1 w-100 h-100 portRowsAlignCenter" onClick={toggleDetailedRow}>
-                <button className="btn">+</button> 
+            <div className="col1 w-100 h-100 portRowsAlignCenter">
+                <SlArrowDown id="arrowPortDown" className="icon iconDown" />
+                <SlArrowUp id="arrowPortUp" className="icon iconUp" style={{display: "none"}} />
             </div>
           </div>
         </div>

@@ -71,13 +71,12 @@
     font-size: var(--fontH6);
     text-decoration: none;
     color: #fff;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
 }
 
 .menu ul li a:hover {
-    font-size:var(--fontH4);
-    text-decoration: underline;
-    transition: 0.2s;
+    font-size:var(--fontH5  );
 }
 
 /* Close button in the menu */

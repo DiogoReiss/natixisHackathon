@@ -1,7 +1,6 @@
 .carousel-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     min-width: max-content;
     margin-left: 15px;
     margin-right: 15px;
