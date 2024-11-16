@@ -10,6 +10,9 @@
     --colorBlack: #000000;
     --colorWhite: #ffffff;
     --colorText: #0E0E0C;
+    --colorPrimary: #681F7A;
+    --colorGradientColor: rgb(234,101,10);
+    --colorGradient: linear-gradient(90deg, rgba(234,101,10,1) 0%, rgba(104,31,122,1) 100%);
 
     /* SPACES */
     --spaceSmall: 5px;
