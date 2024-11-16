@@ -32,12 +32,14 @@ const Carousel = ({ items }: { items: Array<CarouselItem>}) => {
                 className="carousel-track"
                 style={{ animationDuration: `${CAROUSEL_INTERVAL}s`}}
             >
-                {duplicatedItems.map(((item, index) => (
-                    <Item
-                    item={item}
-                    index={index}
-                    />
-                )))}
+                {
+                    duplicatedItems.map(((item, index) => (
+                        <Item
+                        item={item}
+                        index={index}
+                        />
+                    )))
+                }
             </div>
         </section>
     )
