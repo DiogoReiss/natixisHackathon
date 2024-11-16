@@ -1,7 +1,14 @@
 import React from 'react';
 import './HamburgerMenu.css';
+import  { useNavigate } from 'react-router-dom';
 
 const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
+    const navigate = useNavigate();
+    const handleSubmit = (e:any) =>{
+        e.preventDefault();
+        navigate('/');
+    };
+    
     return (
         <div className="hamburger-menu">
             {/* Hamburger button */}
@@ -15,10 +22,10 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
             <nav className={`menu ${isMenuOpen ? 'open' : ''}`}>
                 <button className="close-btn" onClick={toggleMenu}>X</button>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a onClick={handleSubmit}>Home</a></li>
+                    <li><a onClick={()=>navigate('/profile')}>Profile</a></li>
+                    {/* <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li> */}
                 </ul>
             </nav>
         </div>
