@@ -5,6 +5,7 @@ import "./styles/grid.css";
 import "./styles/style.css";
 
 import Home from "./components/HomePage/home";
+import Profile from "./components/Profile/profile";
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Footer from "./components/Footer/footer";
 
@@ -18,7 +19,8 @@ const App = () => {
               <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"></link>
           </Helmet>
           <div>
-              <Home />
+              {/* <Home /> */}
+                <Profile />
           </div>
           <Footer />
       </HelmetProvider>
