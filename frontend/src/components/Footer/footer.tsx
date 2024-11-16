@@ -1,9 +1,10 @@
 import React from "react";
+import Carousel from "../../containers/carousel/carousel";
 
 const Footer = () => {
   return (
     <footer>
-      <section>Hello world.</section>
+      <Carousel />
     </footer>
   );
 };
