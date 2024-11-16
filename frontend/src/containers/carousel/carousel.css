@@ -1,0 +1,25 @@
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 50px; /* Adjust height as needed */
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll-horizontal linear infinite;
+}
+
+/* Animation */
+@keyframes scroll-horizontal {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
