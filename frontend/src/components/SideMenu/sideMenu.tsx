@@ -2,7 +2,12 @@ import React from 'react';
 import './HamburgerMenu.css';
 import  { useNavigate } from 'react-router-dom';
 
-const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
+interface HamburgerMenuProps {
+    toggleMenu: () => void;
+    isMenuOpen: boolean;
+}
+
+const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ toggleMenu, isMenuOpen }) => {
     const navigate = useNavigate();
     const handleSubmit = (e:any) =>{
         e.preventDefault();

@@ -1,4 +1,4 @@
-.carousel-container {
+/* .carousel-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,3 +30,44 @@
         transform: translateX(-100%);
     }
 }
+ */
+
+ .carousel-container {
+    overflow: hidden; /* Esconde os itens que estão fora do container */
+    position: relative;
+
+    margin-inline: var(--spaceMedium);
+    padding: var(--spaceMedium);
+    overflow: hidden;
+    width: 80%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+
+    justify-self: center;
+
+    -webkit-box-shadow: 0 2px 4px 0 rgba(104,31,122,0.25);
+    -moz-box-shadow: 0 2px 4px 0 rgba(104,31,122,0.25);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .carousel-track {
+    display: flex;
+    animation: scroll-infinite 25s linear infinite; /* Movimento contínuo */
+  }
+  
+  .carousel-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Os itens não encolhem */
+    margin: 0 10px; /* Espaçamento entre os itens */
+  }
+  
+  /* Animação para o movimento contínuo */
+  @keyframes scroll-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Move toda a largura do container */
+    }
+  }
