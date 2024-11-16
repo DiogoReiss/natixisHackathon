@@ -8,7 +8,6 @@ import Home from "./components/HomePage/home";
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Footer from "./components/Footer/footer";
 
-
 const App = () => {
   return (
       <HelmetProvider>

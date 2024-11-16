@@ -1,4 +1,4 @@
-import 'React';
+import React from 'React';
 import {useEffect, useState} from "react";
 import {CAROUSEL_INTERVAL, ITEMS_PER_SLIDE} from "../../models/const.models";
 import {CarouselItem} from "../../models/interfaces.models";
@@ -30,7 +30,7 @@ const Carousel = ({ items }: { items: Array<CarouselItem>}) => {
         <section className="carousel-container">
             <div
                 className="carousel-track"
-                stlye={{ animationDuration: `${CAROUSEL_INTERVAL}s`}}
+                style={{ animationDuration: `${CAROUSEL_INTERVAL}s`}}
             >
                 {duplicatedItems.map(((item, index) => (
                     <Item

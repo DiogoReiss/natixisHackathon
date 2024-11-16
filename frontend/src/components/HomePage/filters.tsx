@@ -47,12 +47,14 @@ const FilterBox = (props: Props) => {
                 return [filterOption.value];
             }
             else{
+                /*
                 if(prev.includes(filterOption.value)){
                     return prev.filter((item) => item !== filterOption.value);
                 }
-                else{
+                */
+                // else{
                     return [...prev, filterOption.value];
-                }
+                // }
             }
         });
     }
