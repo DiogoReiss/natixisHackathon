@@ -8,7 +8,9 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react-jsx",
+    "target": "es5",
+    "lib": ["dom", "ES6", "scripthost"]
   },
   "include": ["vite.config.ts", "src"],
   "exclude": []
