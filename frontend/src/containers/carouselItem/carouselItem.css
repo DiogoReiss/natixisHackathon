@@ -1,0 +1,8 @@
+.carousel-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    min-width: max-content; /* Ensure each item takes its content width */
+    margin-right: 20px; /* Space between items */
+    font-size: 1rem; /* Text size */
+    color: #333; /* Text color */
+    white-space: nowrap; /* Prevent text wrapping */
+}

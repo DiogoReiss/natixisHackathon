@@ -6,4 +6,10 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure .tsx is included
   },
+  server: {
+    host: '127.0.0.1', // Bind to 127.0.0.1 instead of localhost
+  },
+  optimizeDeps: {
+    dedupe: ['react', 'react-dom'],
+  },
 });
