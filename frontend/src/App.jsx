@@ -3,6 +3,8 @@ import './styles/grid.css'
 import './styles/style.css'
 
 import Home from './components/HomePage/home'
+import HamburgerMenu
+    from "./components/SideMenu/sideMenu.jsx";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       </head>
       <body>
         <Home />
+        <HamburgerMenu />
       </body>
     </>
   )

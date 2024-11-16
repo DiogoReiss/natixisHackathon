@@ -1,0 +1,92 @@
+/* HamburgerMenu.css */
+.hamburger-menu {
+    position: fixed; /* Fixed positioning to keep it in the top-left corner */
+    top: 20px; /* Space from the top */
+    left: 20px; /* Space from the left */
+    z-index: 1000; /* Ensure the menu appears above other content */
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+.menu {
+    display: none; /* Initially hide the menu */
+    position: fixed;
+    top: 0; /* Align to the top */
+    left: -250px; /* Start off-screen on the left */
+    background: #333;
+    width: 250px; /* Adjust the width to fit your menu items */
+    height: 100vh; /* Full height of the viewport */
+    padding: 10px 0;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.menu.open {
+    display: block; /* Show the menu when open */
+    transform: translateX(250px); /* Slide the menu in from the left */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    background: #555;
+}
+
+/* Style for the close button (X) */
+.close-btn {
+    position: absolute;
+    top: 20px; /* Space from the top */
+    right: 20px; /* Space from the right */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1100; /* Ensure the button is above the menu */
+}
+
+.close-btn:hover {
+    color: #f00; /* Change color on hover */
+}
