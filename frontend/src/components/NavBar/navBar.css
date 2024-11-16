@@ -1,0 +1,31 @@
+/* Navbar or Search Bar styles */
+.search-bar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the search bar */
+    width: 80%; /* Increase the width to make the search bar larger */
+    max-width: 900px; /* Set a max-width for large screens */
+    z-index: 1000; /* Ensures the search bar stays on top */
+    padding: 12px 20px; /* Adds padding for better spacing */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+/* Input inside the search bar */
+.search-bar input {
+    width: 100%; /* Makes the input field take up 100% width */
+    padding: 10px 15px; /* Adds padding inside the input box */
+    font-size: 16px; /* Matches the font size with the search bar */
+    border: none; /* Removes border to match the search bar's design */
+    border-radius: 20px; /* Rounded corners for the input */
+    outline: none; /* Removes the default outline when the input is focused */
+}
+
+/* Container for the main content */
+.container {
+    margin-top: 100px; /* Ensure content starts below the search bar */
+}
