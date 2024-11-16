@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function Box(props){
+const Box = ({props}) => {
     return(
         <>
         <h4>{props.title}</h4>

@@ -2,7 +2,7 @@ import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import PropTypes from 'prop-types';
 import { useState } from "react";
 
-function FilterBox(props){
+const FilterBox = ({ props }) => {
 
     const [selectedFilters, setSelectedFilters] = useState();
 
@@ -18,15 +18,15 @@ function FilterBox(props){
     
         if(filterBox.classList.contains('active')){
             filterBox.classList.remove('active');
-            iconDown.style.display = 'block';
-            iconUp.style.display = 'none';
+            iconDown["style"].display = 'block';
+            iconUp["style"].display = 'none';
 
             filterOptions.style.display = 'none';
         }
         else{
             filterBox.classList.add('active');
-            iconDown.style.display = 'none';
-            iconUp.style.display = 'block';
+            iconDown["style"].display = 'none';
+            iconUp["style"].display = 'block';
 
             filterOptions.style.display = 'flex';
         }
