@@ -1,4 +1,6 @@
 import React from "react";
+import Box from "./box";
+import FilterBox from "./filters";
 
 const Home = () => {
   return (

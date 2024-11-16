@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 
-const Box = ({props}) => {
+interface Props {
+    title: string;
+    newTitle: string;
+    category: string;
+    desc: string;
+}
+
+const Box = (props: Props) => {
     return(
         <>
         <h4>{props.title}</h4>
@@ -17,12 +25,5 @@ const Box = ({props}) => {
         </>
     )
 }
-
-Box.propTypes = {
-    title: PropTypes.string.isRequired,
-    newTitle: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired
-};
 
 export default Box;
