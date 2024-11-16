@@ -1,17 +1,18 @@
-/* HamburgerMenu.css */
+/* Positioning the Hamburger Icon at the Top Left */
 .hamburger-menu {
-    position: fixed; /* Fixed positioning to keep it in the top-left corner */
-    top: 20px; /* Space from the top */
-    left: 20px; /* Space from the left */
-    z-index: 1000; /* Ensure the menu appears above other content */
+    position: fixed;
+    top: 20px;  /* Add some padding from the top */
+    left: 20px; /* Add some padding from the left */
+    z-index: 1001; /* Ensure it's above other elements */
 }
 
+/* Hamburger Button */
 .hamburger-icon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 22px;
+    height: 25px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -19,74 +20,74 @@
 
 .bar {
     width: 30px;
-    height: 4px;
-    background: #333;
+    height: 5px;
+    background-color: #333;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .bar.open:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+    transform: rotate(45deg) translateY(7px); /* Top bar */
 }
 
 .bar.open:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Middle bar */
 }
 
 .bar.open:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-45deg) translateY(-7px); /* Bottom bar */
 }
 
+/* Side Menu */
 .menu {
-    display: none; /* Initially hide the menu */
     position: fixed;
-    top: 0; /* Align to the top */
-    left: -250px; /* Start off-screen on the left */
-    background: #333;
-    width: 250px; /* Adjust the width to fit your menu items */
-    height: 100vh; /* Full height of the viewport */
-    padding: 10px 0;
-    transition: transform 0.3s ease; /* Smooth transition */
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-image: var(--colorGradient);
+    text-align: center;
+    transition: left 0.3s ease; /* Slide-in transition */
+    padding-top: 50px; /* Space for top items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu.open {
-    display: block; /* Show the menu when open */
-    transform: translateX(250px); /* Slide the menu in from the left */
+    left: 0; /* Menu slides in when open */
 }
 
 .menu ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .menu ul li {
-    padding: 10px;
-    text-align: center;
+    margin: 20px;
+    color: #fff;
 }
 
 .menu ul li a {
-    color: white;
+    font-size: var(--fontH6);
     text-decoration: none;
-    font-size: 18px;
+    color: #fff;
+    transition: ease-in-out 0.3s;
 }
 
 .menu ul li a:hover {
-    background: #555;
+    font-size:var(--fontH4);
+    text-decoration: underline;
+    transition: 0.2s;
 }
 
-/* Style for the close button (X) */
+/* Close button in the menu */
 .close-btn {
     position: absolute;
-    top: 20px; /* Space from the top */
-    right: 20px; /* Space from the right */
-    background: transparent;
+    top: 20px;
+    right: 20px;
+    background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 30px;
     cursor: pointer;
-    z-index: 1100; /* Ensure the button is above the menu */
-}
-
-.close-btn:hover {
-    color: #f00; /* Change color on hover */
 }
