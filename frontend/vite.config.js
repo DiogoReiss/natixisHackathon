@@ -6,8 +6,16 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure .tsx is included
   },
+  base: "/",
+  preview: {
+    port: 5174,
+    strictPort: true,
+  },
   server: {
-    host: '127.0.0.1', // Bind to 127.0.0.1 instead of localhost
+    port: 5174,
+    strictPort: true,
+    host: true,
+    origin: "http://0.0.0.0:5174",
   },
   optimizeDeps: {
     dedupe: ['react', 'react-dom'],
