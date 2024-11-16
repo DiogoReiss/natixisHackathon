@@ -6,6 +6,15 @@ interface Props {
     priceDiff: string;
     rating: string;
     id: string;
+    exchange: string;
+    ticker: string;
+    country: string;
+    sector: string;
+    industry: string;
+    currency: string;
+    marketCap: string;
+    dividendYield: string;
+
 }
 
 const ProfRows = (props: Props) => {
@@ -56,42 +65,60 @@ const ProfRows = (props: Props) => {
 
         <div id={props.id} className="portDetailedRow" style={{display: "none"}}>
             <div className="containerNoSpace">
-                <div className="col2 w-100">
-                    <h6>Name</h6>
+                <div className="col2 w-100"></div>
+                <div className="col1 w-100">
+                    <h6>Exchange</h6>
                 </div>
-                <div className="col2 w-100">
-                    <h6>Type</h6>
-                </div>
-                <div className="col2 w-100">
+                <div className="col1 w-100">
                     <h6>Ticker</h6>
+                </div>
+                <div className="col1 w-100">
+                    <h6>Country</h6>
                     </div>
-                <div className="col2 w-100">
-                    <h6>Price P/A</h6>
+                <div className="col1 w-100">
+                    <h6>Setor</h6>
                 </div>
-                <div className="col4 w-100">
-                    <h6>News Rating</h6>
+                <div className="col1 w-100">
+                    <h6>Industry</h6>
                 </div>
+                <div className="col1 w-100">
+                    <h6>Currency</h6>
+                </div>
+                <div className="col1 w-100">
+                    <h6>Market Cap</h6>
+                </div>
+                <div className="col1 w-100">
+                    <h6>Dividend Yield</h6>
+                </div>
+                <div className="col2 w-100"></div>  
             </div>
             <div className="containerNoSpace">
-                <div className="col2 w-100 h-100 portRowsAlignCenter">
-                    <p>{props.name}</p>
-                    <p className="light">{props.percentage}%</p>
-                </div>
-                <div className="col2 w-100 h-100 portRowsAlignCenter">
-                    <p>{props.buyPrice}</p>
-                </div>
-                <div className="col2 w-100 h-100 portRowsAlignCenter">
-                    <p>{props.quantity}</p>
-                </div>
-                <div className="col2 w-100 h-100 portRowsAlignCenter">
-                    <p>{props.priceDiff}</p>
-                </div>
-                <div className="col3 w-100 h-100 portRowsAlignCenter">
-                    <p>{props.rating}</p>
+            <div className="col2 w-100 h-100 portRowsAlignCenter"></div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.exchange}</p>
                 </div>
                 <div className="col1 w-100 h-100 portRowsAlignCenter">
-                    <button className="btn">+</button> 
+                    <p>{props.ticker}</p>
                 </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.country}</p>
+                </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.sector}</p>
+                </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.industry}</p>
+                </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.currency}</p>
+                </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.marketCap}</p>
+                </div>
+                <div className="col1 w-100 h-100 portRowsAlignCenter">
+                    <p>{props.dividendYield}</p>
+                </div>
+                <div className="col2 w-100 h-100 portRowsAlignCenter"></div>
             </div>
         </div>
     </>
