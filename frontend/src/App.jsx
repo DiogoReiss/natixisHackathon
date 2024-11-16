@@ -3,6 +3,7 @@ import './styles/grid.css'
 import './styles/style.css'
 
 import Home from './components/HomePage/home'
+import Footer from './components/Footer/footer'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </head>
       <body>
         <Home />
+        <Footer />
       </body>
     </>
   )
