@@ -1,0 +1,35 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceMedium);
+    height: 665px;
+    background-color: red;
+    padding: var(--spaceMedium);
+}
+
+.box .newsBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .newsBox div{
+    margin-bottom: var(--spaceSmall);
+}
+
+.box .newsBox p{
+    margin-bottom: var(--spaceMedium);
+}
+
+.newsInfoFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hrBox{
+    width: 200px;
+    height: 1px;
+    border: 1px solid var(--colorBlack);
+}

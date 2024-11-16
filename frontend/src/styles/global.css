@@ -1,0 +1,94 @@
+:root {
+    /* GRIDS */
+    --gridWidth: calc((90px * 12 + 20px * 11));
+    --gridGap: 20px;
+    --gridWidthL: calc((90px * 8 + 20px * 7));
+    --gridWidthM: calc((90px * 6 + 20px * 5));
+    --gridWidthS: calc((100% - 10px * 2));
+
+    /* COLORS */
+    --colorBlack: #000000;
+    --colorWhite: #ffffff;
+    --colorText: #0E0E0C;
+
+    /* SPACES */
+    --spaceSmall: 5px;
+    --spaceMedium: 15px;
+    --spaceLarge: 25px;
+    --spaceXLarge: 45px;
+
+    /* FONTS */
+    --fontLight: 0.875rem; /* 14px */
+    --fontP: 1rem; /* 16px */
+    --fontH6: 1.25rem;  /* 20px */
+    --fontH5: 1.5rem; /* 24px */
+    --fontH4: 2rem; /* 32px */
+    --fontH3: 2.5rem; /* 40px */
+    --fontH2: 3rem; /* 48px */
+    --fontH1: 3.5rem; /* 56px */
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--colorBlack);
+  background-color: var(--colorWhite);
+  min-height: 100svh;
+  margin-block: 30px;
+}
+
+h1 {
+  font-size: var(--fontH1);
+}
+
+h2 {
+  font-size: var(--fontH2);
+}
+
+h3 {
+  font-size: var(--fontH3);
+}
+
+h4 {
+  font-size: var(--fontH4);
+}
+
+h5 {
+  font-size: var(--fontH5);
+}
+
+h6 {
+  font-size: var(--fontH6);
+}
+
+.light{
+    font-size: var(--fontLight);
+    font-weight: 300;
+}
+
+.invicibleSpace {
+    display: none;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+} 
+
+@media only screen and (min-width: 768px) {
+    .invicibleSpace {
+        display: block;
+    }
+}
