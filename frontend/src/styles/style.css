@@ -30,7 +30,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+    margin-top: 100px;
 }
 
 .box{
@@ -127,3 +128,50 @@
 }
 
 @media only screen and (min-width: 1440px) {}
+
+.news-item, .interest-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: #fff; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 16px; /* Espaçamento interno */
+    margin-bottom: 16px; /* Espaçamento entre itens */
+    box-shadow: 0px 2px 4px rgba(104, 31, 122, 0.25); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave */
+}
+
+.news-item:hover, .interest-item:hover {
+    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0px 4px 6px rgba(104, 31, 122, 0.35); /* Sombra mais intensa */
+}
+
+.news-item h5, .interest-item h5 {
+    font-size: 18px; /* Tamanho do título */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 8px; /* Espaçamento entre título e descrição */
+}
+
+.news-item p, .interest-item p {
+    font-size: 14px; /* Tamanho da descrição */
+    color: #555; /* Cor de texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+.news-item .category-badge, .interest-item .category-badge {
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+.news-item .badge, .interest-item .badge {
+    background-color: red; /* Cor do fundo do retângulo */
+    color: white; /* Cor do texto */
+    font-size: 12px; /* Tamanho do texto do retângulo */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 3px; /* Bordas arredondadas */
+    padding: 2px 6px; /* Espaçamento interno */
+    margin-left: 8px; /* Espaço entre o texto da categoria e o número */
+}
