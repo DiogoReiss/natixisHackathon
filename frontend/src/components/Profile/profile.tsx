@@ -1,6 +1,29 @@
+import { useEffect, useState } from "react";
 import ProfRows from "./profRows";
 
+interface Data {
+    Name: string;
+    Exchange: string;
+    Symbol: string;
+    Country: string;
+    Sector: string;
+    Industry: string;
+    Currency: string;
+    MarketCapitalization: string;
+    DividendYield: string;
+  }
+
 const Home = () => {
+
+    const [data, setData] = useState<Data[]>([]); // Estado para armazenar os dados carregados do JSON
+
+    // Carregar os dados do JSON
+    useEffect(() => {
+      fetch("public/company_information.json") // Substitua pelo caminho correto se necessário
+        .then((response) => response.json())
+        .then((jsonData) => setData(jsonData))
+        .catch((error) => console.error("Erro ao carregar o JSON:", error));
+    }, []);
 
     const rows = [
         {
@@ -153,24 +176,24 @@ const Home = () => {
                             <h6>Name</h6>
                         </div>
                         <div className="col2 w-100">
-                            <h6>Buy Price</h6>
+                            <h6>Symbol</h6>
                         </div>
                         <div className="col2 w-100">
-                            <h6>Quantity</h6>
+                            <h6>Country</h6>
                         </div>
                         <div className="col2 w-100">
-                            <h6>Price Diff</h6>
+                            <h6>Sector</h6>
                         </div>
                         <div className="col4 w-100">
-                            <h6>Rating</h6>
+                            <h6>Industry</h6>
                         </div>
                     </div>
             </div>
 
-            {rows.map((element, index) => (
-                <ProfRows key={index} id={element.id} name={element.name} percentage={element.percentage} buyPrice={element.buyPrice} quantity={element.quantity} priceDiff={element.priceDiff} rating={element.rating}
-                    exchange={element.exchange} ticker={element.ticker} country={element.country} sector={element.sector} industry={element.industry} currency={element.currency} marketCap={element.marketCap}
-                    dividendYield={element.dividendYield} />
+            {data.map((element, index) => (
+                <ProfRows key={index} id={element.Name} name={element.Name} percentage={element.Exchange} buyPrice={element.Symbol} quantity={element.Country} priceDiff={element.Sector} rating={element.Industry}
+                    exchange={element.Exchange} ticker={element.Symbol} country={element.Country} sector={element.Sector} industry={element.Industry} currency={element.Currency} marketCap={element.MarketCapitalization}
+                    dividendYield={element.DividendYield} />
             ))}
             </div>
         </div>

@@ -83,7 +83,7 @@ const ProfRows = (props: Props) => {
                     <h6>Exchange</h6>
                 </div>
                 <div className="col1 w-100">
-                    <h6>Ticker</h6>
+                    <h6>Symbol</h6>
                 </div>
                 <div className="col1 w-100">
                     <h6>Country</h6>
