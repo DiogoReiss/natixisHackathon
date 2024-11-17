@@ -3,9 +3,12 @@ import './hotNews.css'
 
 import { AiOutlineFire } from "react-icons/ai";
 
-const HotNews = ({ info }) => {
+const HotNews = ({ info, setModelItem, investmentItem }) => {
     return (
-        <div className="hotnews-container interest-item">
+        <div
+            className="hotnews-container interest-item"
+            onClick={() => setModelItem(investmentItem)}
+        >
             <div className="hotnews-title">
                 <AiOutlineFire />
                 <span>Hot News</span>

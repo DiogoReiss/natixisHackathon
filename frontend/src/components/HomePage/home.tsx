@@ -17,7 +17,11 @@ const Home = () => {
 
 
     const investmentInfo = 'Tesla (TSLA) faces slight declines but remains an EV leader; GEO is stable; CVS struggles with earnings drops; JCI thrives on sustainability-driven growth'
-
+    const investmentItem = {
+        Name: 'Hot News',
+        AssetType: '',
+        Description: 'The market for your investments shows mixed results. Tesla (TSLA) has seen a slight decline recently, reflecting broader challenges in the tech sector, but it remains a long-term performer in the EV industry. Geo Group (GEO) has remained relatively stable, though it’s impacted by broader market sentiment toward private prison investments. CVS Health (CVS) has faced a drop in earnings for Q3 2024, with concerns over its ability to outperform competitors, though its price-to-earnings ratio suggests potential growth. Johnson Controls (JCI), on the other hand, has had a strong year, with a 46% increase in its stock price due to a focus on building automation and sustainability technologies'
+    }
   // Carregar os dados do JSON
   useEffect(() => {
     fetch("public/company_information.json") // Substitua pelo caminho correto se necessário
@@ -128,6 +132,8 @@ const Home = () => {
             </div>
             <HotNews
                 info={investmentInfo}
+                setModelItem={setSelectedItem}
+                investmentItem={investmentItem}
             />
           </div>
         </div>
@@ -139,7 +145,9 @@ const Home = () => {
               &times;
             </span>
             <h4>{selectedItem.Name}</h4>
-            <p><strong>Type:</strong> {selectedItem.AssetType}</p>
+              {selectedItem.AssetType ? (
+                  <p><strong>Type:</strong> {selectedItem.AssetType}</p>
+              ) : null}
             <p>{selectedItem.Description}</p>
           </div>
         </div>
