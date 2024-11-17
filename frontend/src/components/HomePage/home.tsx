@@ -12,8 +12,9 @@ interface Data {
 const Home = () => {
   const [search, setSearch] = useState(""); // Estado para a barra de pesquisa
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]); // Estado para os filtros selecionados
-
   const [data, setData] = useState<Data[]>([]); // Estado para armazenar os dados carregados do JSON
+  const [selectedItem, setSelectedItem] = useState<Data | null>(null); // Estado para o item selecionado no modal
+
 
   // Carregar os dados do JSON
   useEffect(() => {
@@ -38,6 +39,15 @@ const Home = () => {
     return matchesSearch && matchesFilters;
   });
 
+   // Trunca a descrição para 30 palavras
+   const truncateDescription = (text: string) => {
+    const words = text.split(" ");
+    if (words.length > 30) {
+      return words.slice(0, 30).join(" ") + "....";
+    }
+    return text;
+  };
+
   return (
     <>
       {/* Barra de navegação com a barra de pesquisa */}
@@ -60,7 +70,7 @@ const Home = () => {
             <h4>News</h4>
             <div>
               {filteredNews.map((item) => (
-                <div key={item.Name} className="news-item">
+                <div key={item.Name} className="news-item" onClick={() => setSelectedItem(item)}>
                   <h5>
                     {item.Name}{" "}
                     <span className="category-badge">
@@ -68,7 +78,7 @@ const Home = () => {
                       <span className="badge">7</span>
                     </span>
                   </h5>
-                  <p>{item.Description}</p>
+                  <p>{truncateDescription(item.Description)}</p>
                 </div>
               ))}
             </div>
@@ -79,7 +89,7 @@ const Home = () => {
             <h4>Interest</h4>
             <div>
               {filteredInterest.map((item) => (
-                <div key={item.Name} className="interest-item">
+                <div key={item.Name} className="interest-item" onClick={() => setSelectedItem(item)}>
                   <h5>
                     {item.Name}{" "}
                     <span className="category-badge">
@@ -87,7 +97,7 @@ const Home = () => {
                       <span className="badge">7</span>
                     </span>
                   </h5>
-                  <p>{item.Description}</p>
+                  <p>{truncateDescription(item.Description)}</p>
                 </div>
               ))}
             </div>
@@ -133,6 +143,18 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {selectedItem && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={() => setSelectedItem(null)}>
+              &times;
+            </span>
+            <h4>{selectedItem.Name}</h4>
+            <p><strong>Type:</strong> {selectedItem.AssetType}</p>
+            <p>{selectedItem.Description}</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
