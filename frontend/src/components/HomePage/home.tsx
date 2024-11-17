@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Box from "./box";
 import FilterBox from "./filters";
+import HotNews from "../../containers/hotNews/hotNews";
 
 interface Data {
   Name: string;
@@ -14,6 +14,8 @@ const Home = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]); // Estado para os filtros selecionados
 
   const [data, setData] = useState<Data[]>([]); // Estado para armazenar os dados carregados do JSON
+
+    const investmentInfo = 'Tesla (TSLA) faces slight declines but remains an EV leader; GEO is stable; CVS struggles with earnings drops; JCI thrives on sustainability-driven growth'
 
   // Carregar os dados do JSON
   useEffect(() => {
@@ -111,25 +113,12 @@ const Home = () => {
                   { name: "Netflix" },
                   { name: "Twitter" },
                 ]}
-                onChange={(selected) => setSelectedFilters(selected)} // Atualiza o estado dos filtros selecionados
-              />
-              <FilterBox
-                title="Companies"
-                optionsId="categoryId2"
-                defaultState=""
-                options={[
-                  { name: "Apple2" },
-                  { name: "Google2" },
-                  { name: "Microsoft2" },
-                  { name: "Tesla2" },
-                  { name: "Amazon2" },
-                  { name: "Facebook2" },
-                  { name: "Netflix2" },
-                  { name: "Twitter2" },
-                ]}
-                onChange={(selected) => setSelectedFilters(selected)} // Atualiza o estado dos filtros selecionados
+                onChange={(selected) => setSelectedFilters(selected)}
               />
             </div>
+            <HotNews
+                info={investmentInfo}
+            />
           </div>
         </div>
       </div>
